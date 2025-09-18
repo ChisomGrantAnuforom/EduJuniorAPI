@@ -3,4 +3,10 @@
 GET {{EduJuniorAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
-###
+# ### Get all schools
+# GET {{EduJuniorAPI_HostAddress}}/api/schools
+# Accept: application/json
+
+# ### Get school by ID
+# GET {{EduJuniorAPI_HostAddress}}/api/schools/1
+# Accept: application/json
