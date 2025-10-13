@@ -29,6 +29,20 @@ namespace EduJuniorAPI.Controllers
             return Ok(school);
         }
 
+
+        [HttpGet("{emailAddress}/{password}")]
+        public IActionResult GetSchoolByEmailAddress(string emailAddress, string password)
+        {
+            var school = context.Schools.FirstOrDefault(s =>  s.EmailAddress == emailAddress && s.Password == password );
+
+            if (school == null)
+            { 
+                return NotFound("Invalid credentials");
+            }
+            
+            return Ok(school);
+        }
+
         [HttpPost]
         public IActionResult CreateSchool([FromBody] School school)
         {
